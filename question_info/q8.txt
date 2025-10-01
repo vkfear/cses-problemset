@@ -1,0 +1,37 @@
+﻿Two Sets
+
+Your task is to divide the numbers 1,2,…,n  into two sets of equal sum.
+
+
+Input
+
+The only input line contains an integer nnn.
+
+
+Output
+
+Print "YES", if the division is possible, and "NO" otherwise.
+After this, if the division is possible, print an example of how to create the sets.
+First, print the number of elements in the first set followed by the elements themselves 
+in a separate line, and then, print the second set in a similar way.
+
+Example 1 and 2
+
+Input: 7                                                            Input: 6
+                                                                                                                                       
+Output: YES                                                         Output: NO
+4
+1 2 4 7
+3
+3 5 6
+
+
+Approach
+
+1. Compute the total sum of the first n natural numbers, which is n(n+1)/2.
+2. If this sum is odd, it is impossible to divide the numbers into two sets of equal sum. Hence, print "NO".
+3. Otherwise, the sum is even, and a solution always exists. The target sum for each set is half of the total sum.
+4. To construct the first set (set1), repeatedly pick the largest unused number and add it to set1:
+   - If the remaining target sum is greater than the current number, include it in set1 and reduce the remaining target.
+   - If the remaining target sum is less than or equal to the current number, add exactly the element equal to the remaining target, which completes set1.
+5. All other numbers that are not included in set1 will form the second set (set2).

@@ -1,0 +1,38 @@
+Permutations 
+
+A permutation of integers 1,2,…,n is called beautiful if there are no adjacent elements whose 
+difference is 1. 
+
+Given n, construct a beautiful permutation if such a permutation exists. 
+
+Input 
+
+The only input line contains an integer n. 
+
+Output 
+
+Print a beautiful permutation of integers 1,2,…,n1. If there are several solutions, you may 
+print any of them. If there are no solutions, print "NO SOLUTION". 
+
+Example 1 and 2 
+
+Input: 5                                                               Input: 3 
+
+Output: 4 2 5 3 1                                                Output: NO SOLUTION 
+
+Approach 
+
+The idea is to construct a beautiful permutation by first listing all the even numbers up to n, 
+followed by all the odd numbers up to n.  
+This arrangement guarantees that no two adjacent elements differ by exactly 1, because 
+consecutive even numbers differ by at least 2, and the same holds for consecutive odd 
+numbers.  
+The only exceptions occur when n = 2 or n = 3, for which no valid permutation exists. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 

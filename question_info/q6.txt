@@ -1,0 +1,51 @@
+Number Spiral 
+
+A number spiral is an infinite grid whose upper-left square has number 1. Here are the first 
+five layers of the spiral: 
+
+1   2   9   10  25 
+4   3   8   11  24 
+5   6   7   12  23 
+16  15  14  13  22 
+17  18  19  20  21 
+
+ find out the number in row y and column x. 
+
+Input 
+
+The first input line contains an integer t: the number of tests. 
+ After this, there are t lines, each containing integers y and x. 
+
+Example 
+
+Input:  2 3 
+
+Output: 8 
+
+Approach 
+
+The grid can be visualized as consisting of concentric squares.  
+
+The value at position (Y, X) always lies on the boundary of the square whose side length is 
+the maximum of Y and X.  
+
+To compute this value, we first calculate the area of the inner square with side length (max(Y, 
+X) - 1).  
+
+The remaining steps to reach the target position can then be added to this base value.  
+
+The direction in which the numbers increase or decrease depends on the parity of the side: 
+
+- If the side length is even, the numbers along the boundary are filled in decreasing order.  
+
+- If the side length is odd, the numbers along the boundary are filled in increasing order in 
+the anticlockwise direction.  
+
+By using this observation, the value at (Y, X) can be determined directly without constructing 
+the entire grid. 
+
+ 
+
+ 
+ 
+ 

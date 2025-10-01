@@ -1,0 +1,50 @@
+Two Knights 
+
+Your task is to count for k=1,2,…,n the number of ways two knights can be placed on a k×k 
+chessboard so that they do not attack each other. 
+
+Input 
+The only input line contains an integer n. 
+
+Example 
+
+Input: 8 
+
+Output:0   6   28   96   252   550   1056   1848 
+
+Approach 
+
+Consider a K × K chessboard. The total number of squares is K².   
+- The first knight can be placed on any of the K² squares.   
+- The second knight can then be placed on any of the remaining (K² − 1) squares. 
+
+Since the two knights are identical (unordered pair), the total number of distinct placements 
+is  ((k*k)*((k*k)-1)) / 2) 
+
+Next, subtract the placements where the knights attack each other.   
+Two knights attack each other exactly when they occupy two squares that are a knight's 
+move apart. Each attacking configuration is contained in a 2×3 or 3×2 rectangle. 
+Observations: 
+
+- Each 2×3 subrectangle contains exactly 2 attacking unordered pairs. 
+- Each 3×2 subrectangle also contains exactly 2 attacking unordered pairs. 
+- The number of positions for a 2×3 block in a K×K board is (K − 1)·(K − 2). The same count 
+holds for 3×2 blocks. 
+
+Therefore the total number of attacking unordered pairs is 4*(k-1) * (k-2) 
+
+Subtracting attacking placements from the total gives the number of non-attacking 
+placements. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

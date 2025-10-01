@@ -1,0 +1,38 @@
+Repetitions 
+
+You are given a DNA sequence: a string consisting of characters A, C, G, and T. 
+Your task is to find the longest repetition in the sequence. This is a 
+maximum-length substring containing only one type of character. 
+
+Input 
+
+The only input line contains a string of n characters. 
+
+Output 
+
+Print one integer: the length of the longest repetition. 
+
+Example 
+
+Input:  ATTCGGG 
+
+Output: 3 
+
+Approach 
+
+The problem can be solved by maintaining a running count of contiguous characters.  
+Iterate over the string, and for each character check whether it is the same as the previous 
+one: 
+- If it is the same, increment the count by 1. 
+- Otherwise, reset the count to 1. 
+At the same time, maintain another variable to track the maximum value of the count at any 
+point. 
+After completing the iteration, this maximum value will represent the length of the longest 
+contiguous repetition. 
+
+ 
+ 
+ 
+ 
+ 
+ 
