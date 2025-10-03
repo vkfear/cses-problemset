@@ -1,0 +1,33 @@
+﻿Trailing Zeros
+
+Your task is to calculate the number of trailing zeros in the factorial n!.
+For example, 20!=2432902008176640000 and it has 4 trailing zeros.
+
+Input
+
+The only input line has an integer n.
+
+Output
+
+Print the number of trailing zeros in n!.
+
+Example
+Input:   20
+Output:  4
+
+Approach:
+The number of trailing zeros in N! is equal to the number of times N! is divisible by 10. 
+Since 10 = 2 × 5, we need to count the number of pairs of {2, 5} in the prime factorization 
+of N!. However, the number of 2s is always greater than or equal to the number of 5s, 
+so the number of trailing zeros is determined only by the count of 5s.
+
+
+To calculate this:
+1. Count how many multiples of 5 are present up to N. Each contributes at least one factor of  5.
+2. Count how many multiples of 25 are present up to N. Each contributes an extra factor of 5.
+3. Similarly, count multiples of 125, 625, and so on.
+4. The final answer is the sum of these counts.
+
+
+Mathematically:
+trailing_zeros = ⌊N/5⌋ + ⌊N/25⌋ + ⌊N/125⌋ + ... until N/k < 1
