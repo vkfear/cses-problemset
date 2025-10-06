@@ -1,0 +1,44 @@
+﻿Coin Piles
+You have two coin piles containing a and b coins. On each move, you can either remove one coin from the left pile and two coins from the right pile, or two coins from the left pile and one coin from the right pile.
+Your task is to efficiently find out if you can empty both the piles.
+Input
+The first input line has an integer t: the number of tests.
+After this, there are t lines, each of which has two integers a and b: the numbers of coins in the piles.
+Output
+For each test, print "YES" if you can empty the piles and "NO" otherwise.
+Example
+Input:  3                                                           Output:
+2 1                                                                     YES
+2 2                                                                     NO
+3 3                                                                     YES
+Approach
+
+
+We are given two piles containing A and B coins respectively. The goal is to check if it is 
+possible to empty both piles by repeatedly performing the following operations:
+- Remove 2 coins from one pile and 1 coin from the other pile in each move.
+
+
+Let:
+X = number of moves where we remove 1 coin from the first pile and 2 coins from the second pile.
+Y = number of moves where we remove 2 coins from the first pile and 1 coin from the second pile.
+
+
+To completely empty both piles, the following two equations must hold:
+1 * X + 2 * Y = A    ...(Equation 1)
+2 * X + 1 * Y = B    ...(Equation 2)
+
+
+Solving these equations gives:
+X = (2B - A) / 3  
+Y = (2A - B) / 3
+
+
+For a valid solution, both X and Y must be non-negative integers. 
+Therefore, the following conditions must be satisfied:
+1. (2B - A) ≥ 0
+2. (2A - B) ≥ 0
+3. (2B - A) and (2A - B) are divisible by 3
+
+
+If all these conditions hold, it is possible to empty both piles; otherwise, it is not.

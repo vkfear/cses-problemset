@@ -1,0 +1,29 @@
+﻿Palindrome Reorder
+Given a string, your task is to reorder its letters in such a way that it becomes a palindrome (i.e., it reads the same forwards and backwards).        
+
+
+Input
+The only input line has a string of length nnn consisting of characters A–Z.
+Output
+Print a palindrome consisting of the characters of the original string. You may print any valid solution. If there are no solutions, print "NO SOLUTION"
+Example
+Input: AAAACACBA
+Output: AACABACAA
+Approach
+To construct a palindrome from the given string S, we first count the frequency of each 
+character. 
+- If a character appears an even number of times, it can be symmetrically placed on both 
+  sides of the palindrome (half on the left and half on the right).
+- If a character appears an odd number of times, one occurrence can be placed in the middle, 
+  while the remaining (even) occurrences can be distributed symmetrically on both sides.
+
+
+A valid palindrome can only have **at most one character** that appears an odd number of times 
+(since only one can occupy the middle position). If more than one character has an odd frequency, 
+it is impossible to form a palindrome.
+
+
+To build the palindrome:
+1. Add half of each even-count character to the left half.
+2. If there is one odd-count character, place it in the middle.
+3. Add the reverse of the left half to complete the palindrome.
