@@ -1,0 +1,51 @@
+﻿Gray Code
+
+A Gray code is a list of all 2n bit strings of length n,
+ where any two successive strings differ in exactly one bit (i.e., their Hamming distance is one).
+Your task is to create a Gray code for a given length n.
+Input
+
+The only input line has an integer n.
+
+Output
+
+Print 2n  lines that describe the Gray code. You can print any valid solution .
+
+Approach
+
+The idea is to solve the problem recursively.
+
+We need to generate a list of 2^n binary strings such that any two successive strings 
+differ in exactly one bit. Suppose we already know how to generate the Gray code sequence 
+for (n - 1) bits, which contains 2^(n - 1) strings. Using this sequence, we can build 
+the sequence for n bits as follows:
+
+1. Store the existing list of 2^(n - 1) strings (for n - 1 bits).
+2. Create a reversed copy of this list.
+3. Prepend '0' to each string in the original list.
+4. Prepend '1' to each string in the reversed list.
+5. Concatenate both modified lists to form the Gray code for n bits.
+
+
+This ensures that consecutive strings differ in exactly one bit, both within each list 
+and across the junction between the two lists.
+
+
+Example:
+For n = 1:
+List = {"0", "1"}
+
+
+For n = 2:
+- Original list = {"0", "1"}
+- Reversed list = {"1", "0"}
+- Prepend '0' to original → {"00", "01"}
+- Prepend '1' to reversed → {"11", "10"}
+- Combine both → {"00", "01", "11", "10"}
+
+
+In this sequence, any two successive strings differ by exactly one bit, 
+satisfying the Gray code property.
+
+
+This recursive pattern can be extended to any n.
