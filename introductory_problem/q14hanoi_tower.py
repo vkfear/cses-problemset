@@ -1,4 +1,3 @@
-
 def moveDisk(diskNumber, moves, sourceStack, destinationStack, auxiliaryStack):
 
     if diskNumber == 1:
